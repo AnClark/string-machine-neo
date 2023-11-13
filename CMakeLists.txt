@@ -118,3 +118,9 @@ if(MSVC)
 else()
   target_compile_options(string-machine-chorus-stereo PUBLIC "-ffast-math")
 endif()
+
+###
+# Allow linking against static Cairo in Msys2
+if(WIN32)
+  add_compile_definitions(CAIRO_WIN32_STATIC_BUILD=1)
+endif ()
